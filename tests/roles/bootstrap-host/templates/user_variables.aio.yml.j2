@@ -104,3 +104,7 @@ nova_service_negate:
 repo_build_pip_extra_indexes:
  - "{{ _pypi_wheel_mirror.stdout_lines[0] }}"
 {% endif %}
+
+lxc_cache_prep_pre_commands: "rm -f /etc/resolv.conf || true"
+lxc_cache_prep_post_commands: "ln -s ../run/resolvconf/resolv.conf /etc/resolv.conf -f"
+spicehtml5_git_repo: https://gitlab.freedesktop.org/spice/spice-html5.git
